@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="templates/template.xhtml">
+
+	<ui:define name="metadata">
+	</ui:define>
+	<ui:define name="content">
+
+		<f:metadata>
+			<f:viewParam name="categoriaId" value="#{categoriaBean.categoriaId}" />
+		</f:metadata>
+
+		<h:form id="formProductos">
+			<p:dataGrid var="producto" value="#{categoriaBean.productos}"
+				id="dgCategorias">
+				<p:column>
+					<p:panel>
+						<h:panelGrid columns="1" style="width:100%">
+							<p:graphicImage value="/images/#{producto.imagen}.jpg" />
+							<h:outputText value="#{producto.nombre}"
+								style="color:#ff8a00; font-weight:bold;" />
+							<h:outputText value="#{producto.descripcion}" />
+						</h:panelGrid>
+					</p:panel>
+				</p:column>
+			</p:dataGrid>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
