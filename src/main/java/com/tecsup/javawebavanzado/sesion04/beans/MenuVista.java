@@ -18,7 +18,6 @@ import com.tecsup.javawebavanzado.sesion04.exception.DAOExcepcion;
 import com.tecsup.javawebavanzado.sesion04.modelo.Categoria;
 import com.tecsup.javawebavanzado.sesion04.negocio.GestionCategorias;
 
-
 @ManagedBean
 public class MenuVista {
 	private MenuModel model;
